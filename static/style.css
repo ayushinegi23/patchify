@@ -1,0 +1,14 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 33%;
+}
+
+.column img {
+  width: 100%;
+}
+

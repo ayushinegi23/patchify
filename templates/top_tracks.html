@@ -1,0 +1,8 @@
+<title>{% block title %}{% endblock %}</title> 
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<div class="row">
+  {% for song in top_songs_list %} 
+  <div class="column"><img src="{{ song }}"></div> 
+  {% endfor %} 
+  </div>
+</div>
