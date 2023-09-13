@@ -47,7 +47,7 @@ def getTopTracks():
 
     LIMIT = 9
 
-    top_songs_data = sp.current_user_top_tracks(limit=LIMIT, offset=0, time_range='medium_term')
+    top_songs_data = sp.current_user_top_tracks(limit=LIMIT, offset=0, time_range='short_term')
     
     top_songs_list = []
     for x in range(LIMIT):
@@ -55,7 +55,6 @@ def getTopTracks():
 
 
     return render_template('top_tracks.html', top_songs_list=top_songs_list) 
-    #return top_songs_data
     
     
 

@@ -1,8 +1,20 @@
 <title>{% block title %}{% endblock %}</title> 
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-<div class="row">
-  {% for song in top_songs_list %} 
-  <div class="column"><img src="{{ song }}"></div> 
-  {% endfor %} 
+<div class="heading"><span class="typing"></span></div>
+<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+  <script>
+    var typed = new Typed(".typing", {
+      strings: ["Here Are Your Top 9 Patches"],
+      typeSpeed: 120,
+      backSpeed: 100,
+      loop: true,
+    })
+
+  </script>
+<div class="box">
+  <div class="row">
+    {% for song in top_songs_list %} 
+    <div class="column"><img src="{{ song }}"></div> 
+    {% endfor %} 
   </div>
 </div>
