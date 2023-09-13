@@ -53,11 +53,9 @@ def getTopTracks():
     for x in range(LIMIT):
         top_songs_list.append(str(top_songs_data['items'][x]['album']['images'][0]['url']))
 
-
     return render_template('top_tracks.html', top_songs_list=top_songs_list) 
     
     
-
 def get_token():
     global token_info
     token_info = session.get(TOKEN_INFO, None)
