@@ -1,13 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap');
 
 
-
-*{
-  background-color: rgb(0, 0, 0);
+body{
+  background-image: url("background.jpg");
 }
 
-.heading{
-  color: white;
+.writing{
   color: white;
   font-size:xx-large;
   font-weight: 600;
@@ -16,24 +14,34 @@
   margin-top: 20px;
 }
 
-
 .box{
-  background-color: rgb(173, 173, 173);
-  width: 800px;
-  height: 700px;
-  margin-left: 300px;
+  background-color: #8d8d8d;
+  width: 600px;
+  height: 650px;
+  margin-left: 425px;
   margin-top: 50px;
   position: relative;
-  border-radius: 15px;
-
+  text-align: center;
 }
+.text{
+  position: absolute;
+  background: #8d8d8d;
+  height: 50px; 
+  width: 100%;
+  top: 570px;
+  text-align: center;
+  font-size: 40px;
+  font-family: 'Covered By Your Grace';
+}
+
+
 .row {
   position: absolute;
   display: flex;
   flex-wrap: wrap;
-  width: 600px;
-  margin-top: 50px;
-  margin-left: 100px;
+  width: 500px;
+  margin-top: 30px;
+  margin-left: 50px;
 }
 
 /* Create four equal columns that sits next to each other */
