@@ -49,11 +49,14 @@ def getTopTracks():
 
     top_songs_data = sp.current_user_top_tracks(limit=LIMIT, offset=0, time_range='short_term')
     
-    top_songs_list = []
-    for x in range(LIMIT):
-        top_songs_list.append(str(top_songs_data['items'][x]['album']['images'][0]['url']))
+    top_tracks_images = []
+    top_tracks_names = []
 
-    return render_template('top_tracks.html', top_songs_list=top_songs_list) 
+    for x in range(LIMIT):
+        top_tracks_images.append(str(top_songs_data['items'][x]['album']['images'][0]['url']))
+        top_tracks_names.append(str(top_songs_data['items'][x]['name']))
+
+    return render_template('top_tracks.html', top_tracks_images=top_tracks_images, top_tracks_names=top_tracks_names) 
     
     
 def get_token():
