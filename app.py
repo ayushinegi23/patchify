@@ -34,7 +34,6 @@ def redirectPage():
     return redirect(url_for('getTopTracks', _external=True))
 
 @app.route('/getTopTracks')
-
 def getTopTracks():
     try: 
         global token_info
@@ -51,12 +50,25 @@ def getTopTracks():
     
     top_tracks_images = []
     top_tracks_names = []
+    top_tracks_ids = []
+    top_tracks_popularity = []
+
 
     for x in range(LIMIT):
         top_tracks_images.append(str(top_songs_data['items'][x]['album']['images'][0]['url']))
         top_tracks_names.append(str(top_songs_data['items'][x]['name']))
+        top_tracks_ids.append(str(top_songs_data['items'][x]['id']))
+        top_tracks_popularity.append(str(top_songs_data['items'][x]['popularity']))
 
-    return render_template('top_tracks.html', top_tracks_images=top_tracks_images, top_tracks_names=top_tracks_names) 
+    top_tracks = list(zip(top_tracks_images, top_tracks_names, top_tracks_ids, top_tracks_popularity))
+    #result = sp.audio_features([top_tracks_ids[0]])
+    #print(str(result))
+    
+    return render_template('top_tracks.html', top_tracks=top_tracks, top_tracks_popularity=top_tracks_popularity)
+
+
+    #return render_template('top_tracks.html', top_tracks_images=top_tracks_images, top_tracks_names=top_tracks_names, top_tracks_ids=top_tracks_ids)
+
     
     
 def get_token():
