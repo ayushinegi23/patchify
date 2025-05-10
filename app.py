@@ -82,3 +82,6 @@ def create_spotify_oauth():
         redirect_uri=url_for('redirectPage', _external=True),
         scope ="user-library-read user-top-read"
         )
+
+if __name__ == "__main__":
+    app.run(debug=True)
